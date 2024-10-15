@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LETRAS DIFERENTES</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>LETRAS DIFERENTES</h1>
+    <p id="parrafo">En este ejercicio encontrarás diferentes letras formando un rectángulo. Fijando tu mirada en el punto central, deberás percibir si todas las letras de las posiciones que se mostrarán iluminadas al inicio son iguales. De no serlo, deberás dar clic al botón ERROR. No importa si el clic se da posterior a la aparición, solo se contarán la cantidad dada.</p>
+    
+    <label id="label-velocidad" for="velocidad">Velocidad (milisegundos): </label>
+    <input type="number" id="velocidad" value="700">
+    <button id="start-btn">Iniciar</button>
+    
+    <div id="grid" class="hidden"></div>
+    
+    <button id="error-btn" class="hidden">ERROR</button>
+    <p id="p1" class="hidden">Aciertos: <span id="aciertos">0</span></p>
+    <p id="p2" class="hidden">Errores: <span id="errores">0</span></p>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

@@ -13,12 +13,14 @@
     <label id="label-velocidad" for="velocidad">Velocidad (milisegundos): </label>
     <input type="number" id="velocidad" value="700">
     <button id="start-btn">Iniciar</button>
-    
+    <div id="timer" class="hidden">Tiempo: 3:00</div>
     <div id="grid" class="hidden"></div>
     
     <button id="error-btn" class="hidden">ERROR</button>
-    <p id="p1" class="hidden">Aciertos: <span id="aciertos">0</span></p>
-    <p id="p2" class="hidden">Errores: <span id="errores">0</span></p>
+    <div id="containerNumber">
+        <p id="p1" class="hidden">Aciertos: <span id="aciertos">0</span></p>
+        <p id="p2" class="hidden">Errores: <span id="errores">0</span></p>
+    </div>
 
     <script src="script.js"></script>
 </body>

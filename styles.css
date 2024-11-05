@@ -61,7 +61,7 @@ button {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 #start-btn, #error-btn {
-    margin: 10px;
+    margin: 5px;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
@@ -75,6 +75,12 @@ button {
 #error-btn:disabled {
     background-color: gray;
     cursor: not-allowed;
+}
+#timer {
+    font-size: 24px;
+    margin-top: 20px;
+    color: #333;
+    font-weight: bold;
 }
 
 #velocidad {
@@ -113,4 +119,74 @@ button:disabled {
 }
 .hidden {
     display: none !important;
+}
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem; /* Disminuir tamaño del encabezado en pantallas más pequeñas */
+    }
+
+    p {
+        font-size: 16px;
+        margin: 0px; /* Disminuir tamaño de fuente de párrafo */
+    }
+
+    #grid {
+        grid-template-columns: repeat(9, 40px); /* Ajustar columnas en la cuadrícula */
+    }
+
+    .cell {
+        width: 40px; /* Reducir el tamaño de las celdas */
+        height: 40px;
+        font-size: 1.2rem; /* Reducir tamaño de fuente de las celdas */
+    }
+
+    #counters {
+        width: 100%; /* Permitir que los contadores ocupen el 100% del ancho */
+        flex-direction: column; /* Cambiar a columna para pantallas pequeñas */
+        align-items: center; /* Centrar los contadores */
+    }
+
+    #controls {
+        flex-direction: column; /* Apilar controles verticalmente */
+        align-items: center; /* Centrar controles */
+    }
+    #containerNumber {
+        width: 222px;
+        display: flex;
+        justify-content: space-between;
+    }
+    #timer {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2rem; /* Disminuir aún más el tamaño del encabezado */
+    }
+
+    p {
+        font-size: 14px; /* Disminuir tamaño de fuente de párrafo */
+    }
+
+    button {
+        padding: 8px 16px; /* Ajustar el padding de los botones */
+        font-size: 14px; /* Disminuir tamaño de fuente de los botones */
+    }
+    #grid {
+        grid-template-columns: repeat(9, 30px); /* Ajustar columnas en la cuadrícula */
+    }
+    #counters {
+        width: 100%; /* Mantener el ancho al 100% */
+    }
+
+    .cell {
+        width: 30px; /* Ajustar tamaño de las celdas */
+        height: 30px;
+        font-size: 1rem; /* Disminuir tamaño de fuente de las celdas */
+    }
+    #timer {
+        font-size: 18px;
+    }
 }

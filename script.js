@@ -1,4 +1,7 @@
+let timerInterval;
 const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const timerDisplay = document.getElementById("timer");
+let totalTime = 10;
 let aciertos = 0;
 let errores = 0;
 let velocidad = 700;
@@ -7,7 +10,27 @@ let letrasRojas;
 
 document.getElementById('start-btn').addEventListener('click', iniciarEjercicio);
 document.getElementById('error-btn').addEventListener('click', verificarError);
+function startTimer() {
+    clearInterval(timerInterval);
+    let timeLeft = totalTime;
 
+    timerInterval = setInterval(() => {
+        let minutes = Math.floor(timeLeft / 60);
+        let seconds = timeLeft % 60;
+
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+        timerDisplay.innerText = `Tiempo: ${minutes}:${seconds}`;
+
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            timerDisplay.innerText = "Tiempo: 0:00";
+            alert("Tiempo agotado!");
+            overTime();
+        }
+
+        timeLeft--;
+    }, 1000);
+}
 function iniciarEjercicio() {
     aciertos = 0;
     errores = 0;
@@ -22,8 +45,10 @@ function iniciarEjercicio() {
     document.getElementById("label-velocidad").classList.add("hidden");
     document.getElementById("velocidad").classList.add("hidden");
     document.getElementById("start-btn").classList.add("hidden");
-
+    timerDisplay.classList.remove("hidden");
+    startTimer();
     generarGrid();
+    
     intervalId = setInterval(cambiarLetras, velocidad);
 }
 
@@ -85,5 +110,10 @@ function verificarError() {
     // Actualizar los contadores en el DOM
     document.getElementById('aciertos').textContent = aciertos;
     document.getElementById('errores').textContent = errores;
+}
+function overTime(){
+    document.getElementById("grid").classList.add("hidden");
+    document.getElementById("error-btn").classList.add("hidden");
+    document.getElementById("timer").classList.add("hidden");
 }
 

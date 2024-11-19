@@ -1,7 +1,7 @@
 let timerInterval;
 const letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const timerDisplay = document.getElementById("timer");
-let totalTime = 10;
+let totalTime = 180;
 let aciertos = 0;
 let errores = 0;
 let velocidad = 700;
